@@ -38,3 +38,22 @@ $ node index.js 6
 > 24620
 ```
 
+## How to use the app
+Install all the packages:
+```bash
+$ npm install
+```
+
+Run the app:
+```bash
+$ node index.js 6
+```
+or with a flag for full response:
+```bash
+$ node index.js 6 --full-response
+```
+
+You can run some unit tests + JS style check
+```bash
+$ npm test
+```
