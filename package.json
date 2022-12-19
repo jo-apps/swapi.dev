@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "semistandard"
+    "test": "npm run lint && npm run mocha",
+    "lint": "semistandard --verbose | snazzy",
+    "mocha": "mocha --recursive --timeout 60000 ./tests/*.spec.js"
   },
   "private": true,
   "license": "UNLICENSED",
@@ -13,6 +15,9 @@
   },
   "type": "module",
   "devDependencies": {
-    "semistandard": "^16.0.1"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "semistandard": "^16.0.1",
+    "snazzy": "^9.0.0"
   }
 }
