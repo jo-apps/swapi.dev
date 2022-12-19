@@ -22,7 +22,7 @@ async function getPlanet (planetUrl) {
 }
 
 function hasWater (planet) {
-  return Number(planet.surface_water) > 0; 
+  return Number(planet.surface_water) > 0;
 }
 
 function hasTerrainType (planet, type) {

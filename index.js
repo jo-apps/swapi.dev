@@ -22,18 +22,17 @@ function getPrintedResult (filmId, planets, fullResponse) {
 
     if (numPlanets > 0) {
       const planetsWithDiameter = `${planets.map(({ name, diameter }) => {
-        return `- ${name}, diameter: ${diameter}`
+        return `- ${name}, diameter: ${diameter}`;
       }).join('\n')}`;
       result += `${planetsWithDiameter}\n`;
     }
 
-    result += `Total diameter: ${totalDiameter}`
+    result += `Total diameter: ${totalDiameter}`;
     return result;
   }
 
   return totalDiameter;
 }
-
 
 async function main () {
   const { filmId, fullResponse } = parseArguments(process.argv);
@@ -42,7 +41,7 @@ async function main () {
     const film = await getFilm(filmId);
     const planetUrls = film.planets;
     const planets = await Promise.all(planetUrls.map(getPlanet));
-    const concernedPlanets = planets.filter(planet => 
+    const concernedPlanets = planets.filter(planet =>
       hasWater(planet) && hasTerrainType(planet, PLANET_TERRAN_TYPE)
     );
     const result = getPrintedResult(filmId, concernedPlanets, fullResponse);
