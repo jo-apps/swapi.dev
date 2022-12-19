@@ -28,14 +28,10 @@ function hasWater (planet) {
 function hasTerrainType (planet, type) {
   return planet.terrain.includes(type);
 }
-function getDiameter (planet) {
-  return Number(planet.diameter);
-}
 
 export {
   getFilm,
   getPlanet,
   hasWater,
-  hasTerrainType,
-  getDiameter
+  hasTerrainType
 };
